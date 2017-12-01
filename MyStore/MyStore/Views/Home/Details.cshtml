@@ -1,0 +1,20 @@
+﻿@model MyStore.Models.Product
+
+@{
+    ViewData["Title"] = Html.DisplayFor(model => model.Title);
+}
+
+<h2>@Html.DisplayFor(model => model.Title)</h2>
+
+<div>
+    <h4>@Html.DisplayFor(model => model.Info)</h4>
+    <hr />
+    <h1>Kr @Html.DisplayFor(model => model.Price)</h1>
+    <hr />
+    <a asp-action="AddToCart" asp-route-id="@(Html.DisplayFor(model => model.Id))" class="btn btn-success">
+        <span class="glyphicon glyphicon-shopping-cart"></span> Add to cart</a>
+</div>
+<hr />
+<div>
+    <a asp-action="Index" class="btn btn-info"><span class="glyphicon glyphicon-arrow-left"></span> Back to List</a>
+</div>

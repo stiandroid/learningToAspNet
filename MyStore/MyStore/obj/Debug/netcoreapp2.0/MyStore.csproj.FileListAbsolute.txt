@@ -1,0 +1,11 @@
+C:\Users\Stian\source\repos\MyStore\MyStore\bin\Debug\netcoreapp2.0\MyStore.deps.json
+C:\Users\Stian\source\repos\MyStore\MyStore\bin\Debug\netcoreapp2.0\MyStore.runtimeconfig.json
+C:\Users\Stian\source\repos\MyStore\MyStore\bin\Debug\netcoreapp2.0\MyStore.runtimeconfig.dev.json
+C:\Users\Stian\source\repos\MyStore\MyStore\bin\Debug\netcoreapp2.0\MyStore.dll
+C:\Users\Stian\source\repos\MyStore\MyStore\bin\Debug\netcoreapp2.0\MyStore.pdb
+C:\Users\Stian\source\repos\MyStore\MyStore\obj\Debug\netcoreapp2.0\MyStore.csprojResolveAssemblyReference.cache
+C:\Users\Stian\source\repos\MyStore\MyStore\obj\Debug\netcoreapp2.0\MyStore.csproj.CoreCompileInputs.cache
+C:\Users\Stian\source\repos\MyStore\MyStore\obj\Debug\netcoreapp2.0\MyStore.AssemblyInfoInputs.cache
+C:\Users\Stian\source\repos\MyStore\MyStore\obj\Debug\netcoreapp2.0\MyStore.AssemblyInfo.cs
+C:\Users\Stian\source\repos\MyStore\MyStore\obj\Debug\netcoreapp2.0\MyStore.dll
+C:\Users\Stian\source\repos\MyStore\MyStore\obj\Debug\netcoreapp2.0\MyStore.pdb

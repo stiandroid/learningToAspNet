@@ -1,0 +1,85 @@
+﻿@model MyStore.Models.ViewModels.ViewModelShoppingCart
+
+<div class="dropdown" style="padding:4px;">
+    <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+        <span class="glyphicon glyphicon-shopping-cart"></span> Shopping cart
+    </button>
+    <table class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1" style="background-color:linen;">
+        <tr>
+            <td colspan="6">
+                <h4>@Html.DisplayNameFor(model => model.Title)</h4>
+            </td>
+        </tr>
+        @foreach (var item in Model.ShoppingCartItems)
+        {
+            <tr>
+                <td style="padding:4px;" nowrap>
+                    <a asp-action="Details" asp-route-id="item.ProductId">@Html.DisplayFor(model => item.ProductTitle)</a>
+                </td>
+                <td style="padding:4px;" align="right" nowrap>
+                    kr @Html.DisplayFor(Model => item.ProductPrice)
+                </td>
+                <td style="padding:4px;" nowrap>
+                    x <input type="text" size="1" value="@Html.DisplayFor(modelItem => item.Quantity)" /> =
+                </td>
+                <td style="padding:4px;" align="right" nowrap>
+                    kr @Html.DisplayFor(modelItem => item.LineSum)
+                </td>
+                <td style="padding:4px;">
+                    <a href="#">
+                        <span title="Refresh quantity" class="glyphicon glyphicon-refresh" style="color:forestgreen;"></span>
+                    </a>
+                </td>
+                <td style="padding:4px;">
+                    <a asp-action="Delete" asp-route-id="@Html.DisplayFor(modelItem => item.ProductId)">
+                        <span title="Delete line" class="glyphicon glyphicon-trash" style="color:firebrick;"></span>
+                    </a>
+                </td>
+            </tr>
+        }
+        <tr class="divider"><td colspan="3"></td><td colspan="2"></td></tr>
+        <tr>
+            <td style="padding:4px;" colspan="3"><strong>Sum</strong></td>
+            <td style="padding:4px;" align="right" nowrap><strong>kr @Html.DisplayNameFor(model => model.TotalSum)</strong></td>
+            <td colspan="2"></td>
+        </tr>
+        <tr>
+            <td colspan="6" style="padding:4px;" align="right"><a class="btn btn-success"><span class="glyphicon glyphicon-credit-card"></span> Go to checkout</a></td>
+        </tr>
+    </table>
+</div>
+
+<!--
+<div class="dropdown" style="padding:4px;">
+    <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+        <span class="glyphicon glyphicon-shopping-cart"></span> Shopping cart
+    </button>
+    <table class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1" style="background-color:linen;">
+        <tr>
+            <td style="padding:4px;" nowrap><a href="#">Produkt #1</a></td>
+            <td style="padding:4px;" align="right" nowrap>kr 99,00</td>
+            <td style="padding:4px;" nowrap>x <input type="text" size="1" value="2" /> =</td>
+            <td style="padding:4px;" align="right" nowrap>kr 198,00</td>
+            <td style="padding:4px;"><a href="#"><span title="Refresh quantity" class="glyphicon glyphicon-refresh" style="color:forestgreen;"></span></a></td>
+            <td style="padding:4px;"><a href="#"><span title="Delete line" class="glyphicon glyphicon-trash" style="color:firebrick;"></span></a></td>
+        </tr>
+        <tr>
+            <td style="padding:4px;" nowrap><a href="#">Produkt #2</a></td>
+            <td style="padding:4px;" align="right" nowrap>kr 1249,00</td>
+            <td style="padding:4px;" nowrap>x <input type="text" size="1" value="1" /> =</td>
+            <td style="padding:4px;" align="right" nowrap>kr 1249,00</td>
+            <td style="padding:4px;"><a href="#"><span title="Refresh quantity" class="glyphicon glyphicon-refresh" style="color:forestgreen;"></span></a></td>
+            <td style="padding:4px;"><a href="#"><span title="Delete line" class="glyphicon glyphicon-trash" style="color:firebrick;"></span></a></td>
+        </tr>
+        <tr class="divider"><td colspan="3"></td><td colspan="2"></td></tr>
+        <tr>
+            <td style="padding:4px;" colspan="3"><strong>Sum</strong></td>
+            <td style="padding:4px;" align="right" nowrap><strong>kr 1447,00</strong></td>
+            <td colspan="2"></td>
+        </tr>
+        <tr>
+            <td colspan="6" style="padding:4px;" align="right"><a class="btn btn-success"><span class="glyphicon glyphicon-credit-card"></span> Go to checkout</a></td>
+        </tr>
+    </table>
+</div>
+-->

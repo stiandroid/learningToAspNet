@@ -1,0 +1,48 @@
+﻿@model MyStore.Models.ViewModels.ViewModelProducts
+@{
+    ViewData["Title"] = "Index";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Info)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id">
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Info)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td nowrap>
+                    <form asp-action="AddToCart">
+                        <input type="hidden" name="ShoppingCartItemProductId" value="@item.Id" />
+                        <input type="text" name="ShoppingCartItemQuantity" value="1" size="1" />
+                        <button type="submit" class="btn btn-success">
+                            <span class="glyphicon glyphicon-shopping-cart"></span> Add to cart
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
